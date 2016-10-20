@@ -1,0 +1,25 @@
+{
+  "totalCount": 5,
+  "results": [
+    {
+      "id": 1,
+      "name": "Example Entity One"
+    },
+    {
+      "id": 2,
+      "name": "Example Entity Two"
+    },
+    {
+      "id": 3,
+      "name": "Example Entity Three"
+    },
+    {
+      "id": 4,
+      "name": "Example Entity Four"
+    },
+    {
+      "id": 5,
+      "name": "Example Entity Five"
+    }
+  ]
+}

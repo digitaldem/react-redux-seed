@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles/main.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+        // Use the "root" div to pass in any arbitrary values or settings to the app
+        // for example: externally retrieved authentication or session information
+        var root = document.getElementById('root');
+        root.setAttribute('data-username', 'Friendly Neighborhood User');
+        root.setAttribute('data-useremail', 'address@domain.com');
+
+        // Bootstrap the app
+        var js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.src = '/dist/bundle.js';
+        document.body.appendChild(js);
+    </script>
+  </body>
+</html>

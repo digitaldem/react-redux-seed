@@ -1,0 +1,43 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  color: #002841;
+  line-height: 22px;
+  margin: 0 0 auto;
+}
+
+.header {
+  background-color: #E3E3E3;
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLeft, .headerRight {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.main {
+  padding: 15px;
+  margin: 0 0 50px 0;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+}
