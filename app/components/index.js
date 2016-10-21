@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './common/header';
 import Footer from './common/footer';
+import DevTools from './common/devtools';
 
 
 class Components extends React.Component {
@@ -12,6 +13,7 @@ class Components extends React.Component {
         <Header />
         { this.props.children }
         <Footer />
+        <DevTools />
       </div>
     );
   }

@@ -3,10 +3,10 @@ import querystring from 'querystring';
 
 
 export function appendUrlParameters(url, params) {
-  const _params = mapValues(params, val =>
+  const joinedParams = mapValues(params, val =>
     (val instanceof Array) ? val.join(',') : val
   );
-  return `${url}?${querystring.stringify(_params)}`;
+  return `${url}?${querystring.stringify(joinedParams)}`;
 }
 
 export function isEqual(a, b) {

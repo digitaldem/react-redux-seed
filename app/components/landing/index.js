@@ -5,12 +5,12 @@ import { loadExamples } from '../../actions/examples';
 
 
 class Landing extends React.Component {
-  shouldComponentUpdate(nextProps, nextState) {
-    return !isEqual(this.props, nextProps) || !isEqual(this.state, nextState);
-  }
-
   componentWillMount() {
     this.props.dispatch(loadExamples());
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !isEqual(this.props, nextProps) || !isEqual(this.state, nextState);
   }
 
   render() {

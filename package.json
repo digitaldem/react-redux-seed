@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": "https://github.com/digitaldem/react-redux-seed/"
   },
   "scripts": {
     "start": "node devserver.js $PORT",
@@ -33,7 +33,7 @@
     "express": "^4.14.0",
     "fetch-mock": "^5.5.0",
     "istanbul": "^0.4.5",
-    "isomorphic-fetch": "^@2.2.1",
+    "isomorphic-fetch": "^2.2.1",
     "jsdom": "^9.8.0",
     "react-addons-test-utils": "^15.3.2",
     "react-transform-catch-errors": "^1.0.2",
@@ -53,6 +53,9 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.1",
     "redux": "^3.6.0",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.1.0",
     "redux-logger": "^2.7.0",
     "redux-thunk": "^2.1.0"
   }

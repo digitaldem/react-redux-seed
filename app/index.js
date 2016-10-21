@@ -1,3 +1,4 @@
+import Bugsnag from 'bugsnag-js';
 import React from 'react';
 import ReactGA from 'react-ga';
 import { Provider } from 'react-redux';
@@ -6,7 +7,7 @@ import Components from './components';
 import Landing from './components/landing';
 import Error from './components/error';
 import { __ENVIRONMENT__, __VERSION__, __DEBUG__, __BUGSNAG_KEY__, __GA_ACCOUNT_ID__ } from './constants';
-import { configureStore } from './middlewares';
+import configureStore from './middlewares';
 
 
 class App extends React.Component {

@@ -1,4 +1,3 @@
-import Bugsnag from 'bugsnag-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
