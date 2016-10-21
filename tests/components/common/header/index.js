@@ -1,5 +1,5 @@
 import React from 'react';
-import expect from 'expect';
+import expect, { createSpy } from 'expect';
 import { getRenderedComponent } from '../../../../tests';
 import { __NAME__ } from '../../../../app/constants';
 import Header from '../../../../app/components/common/header';
@@ -11,7 +11,9 @@ const state = {
   }
 };
 
-const defaultProps = { };
+const defaultProps = {
+  actions: { }
+};
 
 describe('components.header', function() {
   describe('render', function() {

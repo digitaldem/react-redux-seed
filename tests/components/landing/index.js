@@ -11,12 +11,12 @@ const state = {
 };
 
 const defaultProps = {
-  dispatch: createSpy(),
+  actions: {
+    loadExamples: createSpy()
+  },
   isLoading: false,
   examples: []
 };
-
-//spyOn(functions, 'loadExamples').andReturn(true);
 
 describe('components.landing', function() {
   describe('shouldComponentUpdate', function() {
@@ -38,12 +38,14 @@ describe('components.landing', function() {
   });
 
   describe('componentWillMount', function() {
-    const component = renderComponent(<Landing {...defaultProps} />, state);
-    defaultProps.dispatch.reset();
+    beforeEach(function() {
+      defaultProps.actions.loadExamples.reset();
+      renderComponent(<Landing {...defaultProps} />, state);
+    });
 
-    it('should call dispatch once.', function() {
-      expect(defaultProps.dispatch).toHaveBeenCalled();
-      expect(defaultProps.dispatch.calls.length).toEqual(1);
+    it('should dispatch the loadExamples action.', function() {
+      expect(defaultProps.actions.loadExamples).toHaveBeenCalled();
+      expect(defaultProps.actions.loadExamples.calls.length).toEqual(1);
     });
 
   });

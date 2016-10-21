@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { isEqual } from '../../utilities';
 import { loadExamples } from '../../actions/examples';
 
 
 class Landing extends React.Component {
   componentWillMount() {
-    this.props.dispatch(loadExamples());
+    this.props.actions.loadExamples();
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -29,14 +30,26 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  dispatch: React.PropTypes.func.isRequired,
-  examples: React.PropTypes.array.isRequired
+  actions: React.PropTypes.object.isRequired,
+  examples: React.PropTypes.arrayOf(React.PropTypes.object).isRequired
 };
 
-function mapStateToProps(state, ownProps) {
+function mapStateToProps(state) {
   return {
     examples: state.examples.results
   };
 }
 
-export default connect(mapStateToProps, null, null, { withRef: true })(Landing);
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators({
+      loadExamples
+    }, dispatch)
+  };
+}
+
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  return Object.assign({}, dispatchProps, ownProps, stateProps);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps, { withRef: true })(Landing);

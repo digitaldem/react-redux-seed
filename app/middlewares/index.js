@@ -7,8 +7,12 @@ import rootReducer from '../reducers';
 import { __DEBUG__ } from '../constants';
 
 
-export default function configureStore(initialState = { }) {
-  return (__DEBUG__)
-    ? compose(applyMiddleware(thunk, api, logger), devtools)(createStore)(rootReducer, initialState)
-    : compose(applyMiddleware(thunk, api))(createStore)(rootReducer, initialState);
+export function configureDebugStore(initialState = { }) {
+  return compose(applyMiddleware(thunk, api, logger), devtools)(createStore)(rootReducer, initialState);
 }
+
+export function cofigureProdStore(initialState = { }) {
+  return compose(applyMiddleware(thunk, api))(createStore)(rootReducer, initialState);
+}
+
+export default (__DEBUG__) ? configureDebugStore : cofigureProdStore;
