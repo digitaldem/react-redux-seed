@@ -11,8 +11,8 @@ export function configureDebugStore(initialState = { }) {
   return compose(applyMiddleware(thunk, api, logger), devtools)(createStore)(rootReducer, initialState);
 }
 
-export function cofigureProdStore(initialState = { }) {
+export function configureProdStore(initialState = { }) {
   return compose(applyMiddleware(thunk, api))(createStore)(rootReducer, initialState);
 }
 
-export default (__DEBUG__) ? configureDebugStore : cofigureProdStore;
+export default (__DEBUG__) ? configureDebugStore : configureProdStore;
