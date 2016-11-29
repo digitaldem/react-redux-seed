@@ -32,7 +32,7 @@ describe('actions.examples', () => {
         }).then(x => done()).catch(x => done(x));
     });
 
-    it('creates RECEIVE_LOAD_BRANDS_ERROR when loadExamples fetch returns HTTP_500.', (done) => {
+    it('creates RECEIVE_LOAD_EXAMPLES_ERROR when loadExamples fetch returns HTTP_500.', (done) => {
       const expectedActionChain = [
         {type: ActionTypes.REQUEST_LOAD_EXAMPLES},
         {type: ActionTypes.RECEIVE_LOAD_EXAMPLES_ERROR}
